@@ -2,12 +2,12 @@ import React from 'react';
 
 import './header.css';
 
-const Header = () => {
+const Header = ({score}) => {
   return (
     <div className="header d-flex">
       <div className="header-top d-flex">
         <div className="logo"><h1>SongBird</h1></div>
-        <h5>Score: <span class="score">0</span></h5>
+        <h5>Score: <span className="score">{score}</span></h5>
       </div>
       <ul className="header-bottom">
         <li className="page-item active">

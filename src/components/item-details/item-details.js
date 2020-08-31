@@ -1,32 +1,45 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import './item-details.css';
-import defaultBirdImg from '../../assets/image/default-bird.jpg';
 
-export default class ItemDetails extends Component {
-
-  render() {
+const ItemDetails = ({ item }) => {
+  if (!item) {
     return (
       <div className="bird-details card">
-        <div className="card-body">
-          <img className="bird-image" src={defaultBirdImg} alt="bird" />
-          <ul className="list-group list-group-flush">
-            <li className="list-group-item">
-              <h4>Галка</h4>
-            </li>
-            <li className="list-group-item">
-              <span>Coloeus monedula</span>
-            </li>
-            <li className="list-group-item">
-              <div className="audio-player"></div>
-            </li>
-          </ul>
-        </div>
-        <span className="bird-description">
-          Слово «галка» произошло из старославянского языка и переводится как «чёрный».
-          Этим словом часто называют воронов или других черных птиц. Латинское название
-          галки «monedula» связывают со словами монета за любовь птицы к блестящим и ярким вещам.</span>
+        <p>Послушайте плеер.<br/>
+          Выберите птицу из списка.
+        </p>
       </div>
-    )
+    );
   }
+
+  const { name, species, image, description, audio} = item;
+
+  // const audioPlayer = new Audio();
+  // audioPlayer.src = audio;
+  // audioPlayer.play();
+
+  return (
+    <div className="bird-details card">
+      <div className="card-body">
+        <img className="bird-image" src={image} alt="bird" />
+        <ul className="list-group list-group-flush">
+          <li className="list-group-item">
+            <h4>{name}</h4>
+          </li>
+          <li className="list-group-item">
+            <span>{species}</span>
+          </li>
+          <li className="list-group-item">
+            <div className="audio-player"></div>
+          </li>
+        </ul>
+      </div>
+      <span className="bird-description">
+        {description}
+      </span>
+    </div>
+  );
 }
+
+export default ItemDetails;
