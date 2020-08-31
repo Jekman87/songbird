@@ -4,6 +4,7 @@ import './app.css';
 import Header from '../header/header';
 import RandomBlock from '../random-block';
 import ItemList from '../item-list';
+import ItemDetails from '../item-details/item-details';
 
 export default class App extends Component {
 
@@ -17,8 +18,9 @@ export default class App extends Component {
             <ItemList />
           </div>
           <div class="col-md-6">
-
+            <ItemDetails />
           </div>
+          <button class="btn btn-primary">Next Level</button>
         </div>
       </div>
     );
