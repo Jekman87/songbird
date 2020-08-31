@@ -1,0 +1,27 @@
+.random-block {
+  display: flex;
+  padding: 1rem;
+  margin-bottom: 25px;
+}
+
+.bird-image {
+  width: 200px;
+  height: 155px;
+  border-radius: 10px;
+  margin: 0;
+}
+
+.random-block > div {
+  width: 100%;
+  margin-left: 20px;
+}
+
+.random-block .list-group {
+  width: 100%;
+}
+
+.audio-player {
+  margin: 10px 40px 8px 0;
+  width: 100%;
+  min-width: 100px;
+}
