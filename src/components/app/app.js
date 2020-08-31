@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 
 import './app.css';
+import Header from '../header/header';
+import RandomBlock from '../random-block';
 
 export default class App extends Component {
 
   render() {
     return (
-      <h2>Song Birds</h2>
+      <div className="container">
+        <Header />
+        <RandomBlock />
+      </div>
     );
   }
 }

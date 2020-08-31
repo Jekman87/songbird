@@ -1,0 +1,31 @@
+.header {
+  margin-top: .5rem;
+  flex-direction: column;
+}
+
+.header-top {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0;
+  margin-bottom: 25px;
+  overflow: hidden;
+  list-style: none;
+}
+
+.page-item {
+  flex: auto;
+  text-align: center;
+  cursor: auto;
+}
+
+.page-link {
+  cursor: auto;
+}
