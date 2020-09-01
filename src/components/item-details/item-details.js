@@ -8,7 +8,7 @@ export default class ItemDetails extends Component {
   render() {
     if (!this.props.item) {
       return (
-        <div className="bird-details card">
+        <div className="item-details card">
           <p>Послушайте плеер.<br/>
             Выберите птицу из списка.
           </p>
@@ -19,9 +19,9 @@ export default class ItemDetails extends Component {
     const { name, species, image, description, audio} = this.props.item;
 
     return (
-      <div className="bird-details card">
+      <div className="item-details card">
         <div className="card-body">
-          <img className="bird-image" src={image} alt="bird" />
+          <img className="item-image" src={image} alt="bird" />
           <ul className="list-group list-group-flush">
             <li className="list-group-item">
               <h4>{name}</h4>

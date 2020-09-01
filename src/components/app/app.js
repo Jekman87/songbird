@@ -44,8 +44,6 @@ export default class App extends Component {
 
   onItemSelected = (id) => {
     this.setState({selectedItemId: id})
-    // убрать
-    console.log(this.state)
 
     if (this.state.isGuessed) {
       return;
@@ -96,8 +94,6 @@ export default class App extends Component {
     console.log('next level');
     const { level, levelAnswers } = this.state;
 
-    // подготовить стэйт, чекнуть на последний левел - вывести окно победы если нужно
-
     if (level === levelAnswers.length - 1) {
       console.log('game end');
       this.setState({gameEnd: true});
@@ -115,7 +111,6 @@ export default class App extends Component {
   }
 
   onRestartBtn = () => {
-    console.log('restart');
     this.setState(this.initialState());
   }
 
@@ -123,10 +118,9 @@ export default class App extends Component {
     const { score, level, selectedItemId, randomItemId, isGuessed, levelAnswers, gameEnd } = this.state;
     const randomItem = data[level][randomItemId - 1];
     const selectedItem = selectedItemId ? data[level][selectedItemId - 1] : null;
-    // подсказка
-    console.log(randomItem.name);
+    console.log('подсказка', randomItem.name);
 
-    if (!gameEnd) {
+    if (gameEnd) {
       return (
         <div className="container">
           <Header score={score} level={level}/>

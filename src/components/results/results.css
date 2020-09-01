@@ -4,6 +4,10 @@
   margin: 25px 0;
 }
 
+.win-bird-image {
+  width: 100%;
+}
+
 @media (max-width: 767px) {
   h2.display-3 {
     font-size: 3rem;

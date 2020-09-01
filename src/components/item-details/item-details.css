@@ -1,18 +1,18 @@
-.bird-details {
+.item-details {
   display: flex;
   padding: 1rem;
-  border: 1px solid #444;
   width: 100%;
+  border-radius: 10px;
 }
 
 .card-body {
   display: flex;
   padding: 0;
   flex-direction: row;
-  min-height: 173px;
+  min-height: 155px;
 }
 
-.bird-details .bird-image {
+.item-details .item-image {
   width: 200px;
   height: 155px;
   border-radius: 10px;
@@ -24,3 +24,24 @@
   width: 100%;
 }
 
+.item-details .rhap_total-time {
+  display: none;
+}
+
+.item-details .list-group-item {
+  padding: 0.25rem 0.75rem;
+}
+
+@media (max-width: 1199px) {
+  .item-details .card-body {
+    flex-direction: column;
+  }
+
+  .item-details .item-image {
+    margin: 0 auto 15px;
+  }
+
+  .item-details .audio-wrapper {
+    margin: 5px 0;
+  }
+}

@@ -17,34 +17,32 @@ export default class RandomBlock extends Component {
     const { randomItem, isGuessed } = this.props;
 
     return (
-      <div className="random-block jumbotron rounded">
-        <img className="bird-image" src={ isGuessed ? randomItem.image : defaultBirdImg } alt="bird" />
-        <div>
-          <ul className="list-group list-group-flush">
-            <li className="list-group-item">
-              <h3>{isGuessed ? randomItem.name : '******'}</h3>
-            </li>
-            <li className="list-group-item">
-              <div className="audio-wrapper">
-                <ReactAudioPlayer
-                  className="audio-player"
-                  layout="horizontal"
-                  src={randomItem.audio}
-                  autoPlayAfterSrcChange={false}
-                  ref={this.player}
-                  showJumpControls={false}
-                  customProgressBarSection={[
-                    RHAP_UI.MAIN_CONTROLS,
-                    RHAP_UI.CURRENT_TIME,
-                    RHAP_UI.PROGRESS_BAR,
-                    RHAP_UI.DURATION
-                  ]}
-                  customControlsSection={[RHAP_UI.VOLUME_CONTROLS]}
-                />
-              </div>
-            </li>
-          </ul>
-        </div>
+      <div className="random-block jumbotron">
+        <img className="item-image" src={ isGuessed ? randomItem.image : defaultBirdImg } alt="bird" />
+        <ul className="list-group list-group-flush">
+          <li className="list-group-item">
+            <h3>{isGuessed ? randomItem.name : '******'}</h3>
+          </li>
+          <li className="list-group-item">
+            <div className="audio-wrapper">
+              <ReactAudioPlayer
+                className="audio-player"
+                layout="horizontal"
+                src={randomItem.audio}
+                autoPlayAfterSrcChange={false}
+                ref={this.player}
+                showJumpControls={false}
+                customProgressBarSection={[
+                  RHAP_UI.MAIN_CONTROLS,
+                  RHAP_UI.CURRENT_TIME,
+                  RHAP_UI.PROGRESS_BAR,
+                  RHAP_UI.DURATION
+                ]}
+                customControlsSection={[RHAP_UI.VOLUME_CONTROLS]}
+              />
+            </div>
+          </li>
+        </ul>
       </div>
     );
   }
