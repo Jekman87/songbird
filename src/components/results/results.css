@@ -8,6 +8,12 @@
   width: 100%;
 }
 
+.btn-restart {
+  display: block;
+  width: auto;
+  margin: 25px auto;
+}
+
 @media (max-width: 767px) {
   h2.display-3 {
     font-size: 3rem;

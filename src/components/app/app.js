@@ -57,7 +57,6 @@ export default class App extends Component {
   }
 
   winSelect(id) {
-    console.log('win!');
     this.setState(({score, currentPoint, levelAnswers}) => {
       const newLevelAnswers = levelAnswers.map((el, idx) => idx === (id - 1) ? 'success' : el);
 
@@ -73,7 +72,6 @@ export default class App extends Component {
   }
 
   errorSelect(id) {
-    console.log('error');
     this.setState(({currentPoint, levelAnswers}) => {
       const newLevelAnswers = levelAnswers.map((el, idx) => idx === (id - 1) ? 'error' : el);
 
@@ -91,11 +89,9 @@ export default class App extends Component {
   nativePlayer = new Audio();
 
   nextLevel = () => {
-    console.log('next level');
     const { level, levelAnswers } = this.state;
 
     if (level === levelAnswers.length - 1) {
-      console.log('game end');
       this.setState({gameEnd: true});
       return;
     }
@@ -144,7 +140,7 @@ export default class App extends Component {
             <ItemDetails item={selectedItem}/>
           </div>
           <button
-            className="btn btn-primary"
+            className="btn btn-info"
             onClick={this.nextLevel}
             disabled={isGuessed ? false : true}
             >Next Level</button>
