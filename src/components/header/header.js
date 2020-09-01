@@ -1,8 +1,17 @@
 import React from 'react';
 
 import './header.css';
+import { birdsTitles } from '../../data/birds';
 
-const Header = ({score}) => {
+const Header = ({ score, level}) => {
+  const titles = birdsTitles.map((title, idx) => {
+    return (
+        <li className={`page-item ${level === idx ? 'active' : ''}`} key={idx}>
+          <a className="page-link" href="/#">{title}</a>
+        </li>
+    );
+  })
+
   return (
     <div className="header d-flex">
       <div className="header-top d-flex">
@@ -10,24 +19,7 @@ const Header = ({score}) => {
         <h5>Score: <span className="score">{score}</span></h5>
       </div>
       <ul className="header-bottom">
-        <li className="page-item active">
-          <a className="page-link" href="/#">Разминка</a>
-        </li>
-        <li className="page-item">
-          <a className="page-link" href="/#">Воробьиные</a>
-        </li>
-        <li className="page-item">
-          <a className="page-link" href="/#">Лесные птицы</a>
-        </li>
-        <li className="page-item">
-          <a className="page-link" href="/#">Певчие птицы</a>
-        </li>
-        <li className="page-item">
-          <a className="page-link" href="/#">Хищные птицы</a>
-        </li>
-        <li className="page-item">
-          <a className="page-link" href="/#">Морские птицы</a>
-        </li>
+        {titles}
       </ul>
     </div>
   );

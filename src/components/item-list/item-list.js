@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './item-list.css';
-import birdsData from '../../data/birds';
+import { birdsData } from '../../data/birds';
 
 const ItemList = ({level, onItemSelected}) => {
 

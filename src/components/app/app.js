@@ -6,12 +6,11 @@ import RandomBlock from '../random-block';
 import ItemList from '../item-list';
 import ItemDetails from '../item-details/item-details';
 
-import birdsData from '../../data/birds';
+import { birdsData } from '../../data/birds';
 import winSound from '../../assets/audio/win.mp3';
 import errorSound from '../../assets/audio/error.mp3';
 
 export default class App extends Component {
-
 
   state = {
     score: 0,
@@ -60,6 +59,12 @@ export default class App extends Component {
 
   audioPlayer = new Audio();
 
+  nextLevel() {
+    console.log('next level');
+    // подготовить стэйт, чекнуть на последний левел - вывести окно победы если нужно
+
+  }
+
   render() {
     const { score, level, selectedItemId, randomItemId, isGuessed } = this.state;
     const randomItem = birdsData[level][randomItemId - 1];
@@ -69,7 +74,7 @@ export default class App extends Component {
 
     return (
       <div className="container">
-        <Header score={score} />
+        <Header score={score} level={level}/>
         <RandomBlock randomItem={randomItem} isGuessed={isGuessed}/>
         <div className="row mb2">
           <div className="col-md-6">
@@ -78,7 +83,7 @@ export default class App extends Component {
           <div className="col-md-6">
             <ItemDetails item={selectedItem}/>
           </div>
-          <button className="btn btn-primary">Next Level</button>
+          <button className="btn btn-primary" onClick={this.nextLevel}>Next Level</button>
         </div>
         <audio src={winSound} id="winSound"></audio>
         <audio src={errorSound} id="errorSound"></audio>

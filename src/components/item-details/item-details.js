@@ -31,7 +31,7 @@ const ItemDetails = ({ item }) => {
             <span>{species}</span>
           </li>
           <li className="list-group-item">
-            <div className="audio-player"></div>
+            <div className="audio-player">{audio}</div>
           </li>
         </ul>
       </div>
