@@ -1,10 +1,10 @@
 import React from 'react';
 
 import './header.css';
-import { birdsTitles } from '../../data/birds';
+import { birdsTitles as itemTitles } from '../../data/birds';
 
 const Header = ({ score, level}) => {
-  const titles = birdsTitles.map((title, idx) => {
+  const titles = itemTitles.map((title, idx) => {
     return (
         <li className={`page-item ${level === idx ? 'active' : ''}`} key={idx}>
           <a className="page-link" href="/#">{title}</a>

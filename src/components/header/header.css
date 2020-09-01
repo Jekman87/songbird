@@ -29,3 +29,7 @@
 .page-link {
   cursor: auto;
 }
+
+.page-link:hover {
+  background: none;
+}
