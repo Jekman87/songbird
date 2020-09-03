@@ -1,0 +1,44 @@
+.header {
+  margin-top: .5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-top {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1,
+.header h3 {
+  font-weight: bold;
+}
+
+.header-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0;
+  margin-bottom: 25px;
+  overflow: hidden;
+  list-style: none;
+  border-radius: 5px;
+}
+
+.page-item {
+  flex: auto;
+  text-align: center;
+  padding: 0.5rem;
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+}
+
+.page-item.active {
+  background-color: #258cd1;
+  color: #212529;
+}
